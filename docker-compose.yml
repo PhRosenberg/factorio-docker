@@ -6,13 +6,14 @@ services:
     hostname: factorio
     stdin_open: true
     tty: true
+    image: phrosenberg/factorio
     build:
       context: ./
       args:
         VERSION: "1.0.0"
     environment:
-      - SAVE=testo.zip
+      - SAVE
     ports:
       - "34197:34197/udp"
     volumes:
-      - "/opt/factorio:/factorio"
+      - "./factorio:/factorio"
